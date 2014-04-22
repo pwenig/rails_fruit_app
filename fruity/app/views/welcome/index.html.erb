@@ -1,0 +1,12 @@
+<form action="/" method='post'>
+  <input type="text" name="name">
+  <input type="text" name="description">
+  <input type="submit" value="Create">
+</form>
+
+
+<% @fruits.each do |fruit| %>
+  <p>Name: <%= fruit.name %></p>
+  <p>Description: <%= fruit.description %></p>
+<% end %>
+
