@@ -16,6 +16,17 @@ feature 'Create fruit' do
     click_on 'Edit'
     expect(page).to have_content "Name: banana"
 
+
+  end
+
+  scenario "User can delete a fruit" do
+    visit '/'
+    fill_in 'name', with: 'apple'
+    fill_in 'description', with: 'red'
+    click_on 'Create'
+    click_on 'Delete'
+    expect(page).to have_no_content('apple')
+
   end
 
 end

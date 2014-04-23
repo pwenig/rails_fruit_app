@@ -1,19 +1,29 @@
 class WelcomeController < ApplicationController
 
   def index
-  @fruits = Fruit.all
+    @fruits = Fruit.all
   end
 
   def create
-  Fruit.create(name: params[:name], description: params[:description])
+    create_fruit = Fruit.new
+    create_fruit.name = params[:name]
+    create_fruit.description = params[:description]
+    create_fruit.save
     redirect_to '/'
   end
 
-def update
-  id = params[:id]
-  @fruit = Fruit.find_by(id: id)
-  Fruit.update(params[:id], name: params[:name], description: params[:description])
-  @fruit.save
 
-end
+  def update
+    update_fruit = Fruit.find(params[:id])
+    update_fruit.name = params[:name]
+    update_fruit.description = params[:description]
+    update_fruit.save
+
+  end
+
+  def destroy
+    destroy_fruit = Fruit.find(params[:id])
+    destroy_fruit.destroy!
+    redirect_to '/'
+  end
 end

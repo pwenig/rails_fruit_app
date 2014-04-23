@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   post '/', to: 'welcome#create'
   get '/fruits/update/:id', to: 'welcome#update'
   put '/', to: 'welcome#update'
+  get '/fruits/delete/:id', to: 'welcome#destroy'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
