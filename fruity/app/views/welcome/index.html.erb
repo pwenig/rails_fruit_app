@@ -7,8 +7,12 @@
 
 <% @fruits.each do |fruit| %>
   <p>Name: <%= fruit.name %> | Description: <%= fruit.description %> |
-    <a href="fruits/update/<%= fruit.id %>">Update</a>
-  <a href="fruits/delete/<%= fruit.id %>">Delete</a></p>
+    <a href="/fruits/<%= fruit.id %>/edit">Update</a>
+  <form action="/fruits/<%= fruit.id %>" method='post'>
+    <input type="hidden" name="_method" value="delete">
+    <input type="submit" value="Delete">
+  </form>
+
 <hr>
 <% end %>
 
