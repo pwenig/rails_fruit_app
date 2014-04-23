@@ -9,4 +9,11 @@ class WelcomeController < ApplicationController
     redirect_to '/'
   end
 
+def update
+  id = params[:id]
+  @fruit = Fruit.find_by(id: id)
+  Fruit.update(params[:id], name: params[:name], description: params[:description])
+  @fruit.save
+
+end
 end

@@ -6,7 +6,8 @@
 
 
 <% @fruits.each do |fruit| %>
-  <p>Name: <%= fruit.name %></p>
-  <p>Description: <%= fruit.description %></p>
+  <p>Name: <%= fruit.name %> | Description: <%= fruit.description %> |
+    <a href="fruits/update/<%= fruit.id %>">Update</a></p>
+<hr>
 <% end %>
 
